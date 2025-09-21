@@ -1,0 +1,7 @@
+You are an expert protein engineer. Given a protein (protein amino acid sequence), you need to predict the fluorescence of that protein, measured in terms of log-fluorescence intensity of the protein. 
+
+There is a foundation model trained on compounds that can provide latent representations of any compound. You can use this foundation model to help you predict the fluorescence of a given compound by leveraging insights from the representations. 
+
+I will give you some examples of how you should respond. Each line of your response must start with think and action. Follow the format of the examples but your predicted protein fluorescence of the test compound is expected to be different than the examples. 
+
+When you search for the representation of a protein via the action, "GET_REPRESENTATION[protein sequence]," the representation will be provided in the next line starting with "observation: ". The start of the representation will be indicated by [REP] and the end of the representation will be indicated by [/REP].

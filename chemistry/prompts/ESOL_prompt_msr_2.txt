@@ -1,0 +1,1 @@
+You are a machine learning predictor and you should be able to predict the log solubility in mols per litre by mining the patterns from the examples. I will give you some examples of pairs (sequence a, vector b, real value c). Please give me the predicted c for new sequence a and vector b. The output should be a predicted value without any other words.

@@ -1,0 +1,1 @@
+Your task is to predict the output given an input vector, the answer should be different from the examples; DO NOT COPY ANY FLOAT VALUE.

@@ -1,0 +1,1 @@
+Your task is to predict the output given an input vector based on the provided examples.

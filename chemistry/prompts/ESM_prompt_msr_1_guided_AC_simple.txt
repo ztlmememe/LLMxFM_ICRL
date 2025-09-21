@@ -1,0 +1,1 @@
+You are a protein expert. The answer should be different from the examples; DO NOT COPY ANY FLOAT VALUE.

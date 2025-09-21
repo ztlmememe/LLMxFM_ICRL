@@ -1,0 +1,56 @@
+#!/bin/bash
+#PBS -l select=1:ngpus=1
+#PBS -P 12004167
+#PBS -l walltime=24:00:00
+#PBS -q normal
+
+## Merge standard output and error from PBS script
+#PBS -j oe
+#PBS -o /home/users/ntu/tianle00/scratch/llmxfm-0.0/chemistry/logs/pbs/caption1.log
+
+# load env module
+module load miniforge3
+module load cuda/11.8.0
+
+
+cd /home/users/ntu/tianle00/scratch/llmxfm-0.0
+
+export HF_HOME=/home/users/ntu/tianle00/scratch/cache
+export CONDA_ENVS_PATH=/home/users/ntu/tianle00/scratch/conda/envs
+export CONDA_PKGS_DIRS=/home/users/ntu/tianle00/scratch/conda/pkgs
+
+conda activate llmxfm
+
+TSAK_NAME="ChEBI-20"
+TIMEOUT_DURATION=72000 # 180 minutes in seconds
+
+MODEL_NAME='/home/users/ntu/tianle00/scratch/cache/hub/models--meta-llama--Meta-Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659'
+
+SEEDS=("2021" "7777" "8888" "1111" "2222" "3333" "5555" "101010" "202020" "606060")
+
+SHOTS=(100)
+
+for SEED in "${SEEDS[@]}"; do
+    echo "Running for seed: $SEED"
+
+    for SHOT in "${SHOTS[@]}"; do
+        echo "Running for shot: $SHOT"
+
+        timeout $TIMEOUT_DURATION python -m chemistry.SC_scripts.Caption_run_trainer_icl \
+            --experiment_type icl \
+            --experiment_name baseline_8B \
+            --seed $SEED \
+            --task_name $TSAK_NAME \
+            --model_name $MODEL_NAME \
+            --num_trains 2000 \
+            --num_tests 500 \
+            --n_representation_shots $SHOT \
+            --temperature 1.0 \
+        || echo "pca_icl for seed $SEED timed out or failed"
+
+
+    done
+
+done
+
+

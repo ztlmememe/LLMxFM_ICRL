@@ -1,0 +1,1 @@
+Your task is to predict the output y given an input vector x, where x and y follow a linear mapping relationship y=wx. NOTE THAT you should treat x as a vector, not as text, and DO NOT provide any analysis.

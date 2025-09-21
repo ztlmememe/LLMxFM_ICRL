@@ -1,0 +1,1 @@
+Please complete the following question answering task: You are given a SMILES representation of a molecule and a question about it with several options, please analysis the structure of the molecule and choose the right answer for the question from given options.

@@ -1,0 +1,1 @@
+Your task is to learn a mapping from a given representation based on examples and predict the output without additional explanation.
