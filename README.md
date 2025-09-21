@@ -60,8 +60,6 @@ LLMxFM/
 ---
 
 
----
-
 ## 🔬 Experiments Overview
 
 This repository provides code and scripts to reproduce all experiments in our NeurIPS paper.
@@ -202,100 +200,6 @@ This script runs all variants (`rep`, `rep_w_o_norm`, `rep_icl`) across 10 rando
 > We welcome any suggestions regarding this issue. Importantly, such instability is **not unique to our method**—it also appears in baseline ICL methods. Nevertheless, repeated trials consistently confirm the same empirical conclusions.  
 >  
 > For transparency, we provide part of our experiment logs on [Hugging Face](https://huggingface.co/datasets/tianle233/icrl-data/) for reference (note: earlier logs were automatically cleared by the cluster).  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***LoRA generation from CLI***
-
-This script allows us to generate a LoRA based on a task description. Running for the first time would take longer as the base model will be downloaded and cached.
-```bash
-# uv run generate_lora.py {T2l_DIRECTORY} {TASK_DESCRIPTION}
-# e.g.,
-uv run python scripts/generate_lora.py \
-trained_t2l/llama_8b_t2l \
-"This task challenges your problem-solving abilities through mathematical reasoning. You must carefully read each scenario and systematically work through the data to compute the final outcome."
-
-# You might be able to run T2L w/ `gemma-2-2b-it` with a smaller GPU.
-uv run python scripts/generate_lora.py \
-trained_t2l/gemma_2b_t2l \
-"This task challenges your problem-solving abilities through mathematical reasoning. You must carefully read each scenario and systematically work through the data to compute the final outcome."
-```
-
-***Evaluating generated LoRA***
-
-We can evaluate the generated LoRA by using the path printed at the end of the above script.
-```bash
-# uv run python scripts/run_eval.py --model-dir {base_model_dir} \
-# --lora-dirs {lora_dirs} --save-results --tasks {tasks}
-# e.g.,
-uv run python scripts/run_eval.py \
---model-dir meta-llama/Llama-3.1-8B-Instruct \
---lora-dirs {PATH_TO_GENERATED_LORA} \
---save-results --tasks gsm8k
-
-# You might be able to run T2L w/ `gemma-2-2b-it` with a smaller GPU.
-uv run python scripts/run_eval.py \
---model-dir google/gemma-2-2b-it \
---lora-dirs {PATH_TO_GENERATED_LORA} \
---save-results --tasks gsm8k
-```
-
-
----
-
-<h1 align="center">📊 Evaluation</h1>
-
-Base model
-```bash
-./scripts/eval_base_models.sh
-```
-
-T2L
-```bash
-# example for T2L trained for gemma-2-2b-it
-WANDB_MODE=disabled uv run python scripts/eval_hypermod_checkpoint.py --checkpoint_path trained_t2l/gemma_2b_t2l/hypermod.pt --full_eval --use-icl
-```
-`--use-icl` includes 3-shot in-context examples into evaluation queries.
-
----
-
-<h1 align="center">:warning: Known Issues :warning:</h1>
-
-### :test_tube: Reproducibility
-> ***Disclaimer :grey_exclamation:***
-> 
-> We have re-trained a new set of baselines and T2L models due to a small mismatch
-> between the specific package version combinations used in the original submission.
-> 
-> Furthermore, vLLM is inherently non-deterministic when applying LoRA (in the version-configuration combinations we tested).
-> Thus, we have observed some small variance between evaluation runs even with a fixed initial seed.
-> 
-> However, after re-retraining and collecting new results, T2L still consistently outperforms baselines across model families, confirming the validity of our original empirical analysis. We present this new set of results with the updated package versions in the following tables.
-> (`eval #1` and `eval #2` indicate that the results are gathered from two different evaluation calls with the same random seed.)
-
-
-### 📡 Huggingface datasets connection
-
-Huggingface datasets server might reject connections sometimes, which can be problematic if you haven't locally cached the relevant datasets.
-The cause could be that we're downloading a lot of datasets (~500 datasets).
-If this happens, keep retrying the SFT training script until all datasets are cached locally.
-Once the datasets are cached, you should be able to run the SFT training script.
 
 ---
 
