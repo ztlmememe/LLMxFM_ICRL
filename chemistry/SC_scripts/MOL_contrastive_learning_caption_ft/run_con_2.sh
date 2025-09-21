@@ -1,6 +1,7 @@
 
 export HF_HOME=/mnt/hdd1/cache
 cd /mnt/ssd/ztl/LLMxFM
+conda activate llmxfm
 
 # fix layer
 CUDA_VISIBLE_DEVICES=2 python -m chemistry.SC_scripts.MOL_trainer_contrastive_multiple_front \

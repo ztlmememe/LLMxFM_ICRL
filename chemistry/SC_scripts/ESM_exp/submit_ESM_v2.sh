@@ -2,7 +2,7 @@
 
 export HF_HOME=/home/chanalvin/cache
 cd /home/chanalvin/LLMxFM
-
+conda activate llmxfm
 
 MAX_RUNTIME=2000
 

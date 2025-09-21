@@ -1,6 +1,7 @@
 
 export HF_HOME=/mnt/hdd1/cache
 cd /mnt/ssd/ztl/LLMxFM
+conda activate llmxfm
 
 SEEDS=("2021" "7777" "8888" "1111" "2222" "3333" "5555" "101010" "202020" "606060")
 SHOTS=(20)

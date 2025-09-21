@@ -1,7 +1,7 @@
 
 export HF_HOME=/mnt/hdd1/cache
 cd /mnt/ssd/ztl/LLMxFM
-
+conda activate llmxfm
 
 CUDA_VISIBLE_DEVICES=3 python -m chemistry.SC_scripts.MOL_trainer_caption_contrastive \
     --batch_size 16 \

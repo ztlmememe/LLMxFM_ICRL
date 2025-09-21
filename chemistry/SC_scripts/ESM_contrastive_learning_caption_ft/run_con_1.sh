@@ -1,6 +1,7 @@
 
 export HF_HOME=/mnt/hdd1/cache
 cd /mnt/ssd/ztl/LLMxFM
+conda activate llmxfm
 
 CUDA_VISIBLE_DEVICES=1 python -m chemistry.SC_scripts.ESM_trainer_contrastive_multiple \
     --task_names Fluorescence \
