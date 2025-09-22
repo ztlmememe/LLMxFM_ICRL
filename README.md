@@ -2,7 +2,7 @@
 # In-Context Representation Learning (ICRL)
 Official code release for the NeurIPS 2025 paper:  
 **"Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning"**  
-Authors: [Your Name], [Co-authors], ...
+Authors: Tianle Zhang, Wanlong Fang, Jonathan Woo, Paridhi Latawa, Deepak A. Subramanian, Alvin Chan 
 
 [[Paper Link]](https://arxiv.org/abs/xxxx.xxxxx) | [[NeurIPS Page]](https://neurips.cc/virtual/YYYY/poster/XXXX)  
 
@@ -190,16 +190,16 @@ This script runs all variants (`rep`, `rep_w_o_norm`, `rep_icl`) across 10 rando
 
 
 
-### :test_tube: Reproducibility
+### :warning: Known Issues :warning:
 > ***Disclaimer :grey_exclamation:***  
->  
-> Due to the inherent instability of **In-Context Learning (ICL)**, hardware variance, and the randomness of seed selection, we cannot guarantee *perfect reproducibility* of all experimental results.  
->  
-> We have carefully fixed random seeds in many of our runs, but we still observe small variations. In fact, when running on large-scale clusters, even with the **same FM cache** and the **same codebase**, inference outputs may differ across different cluster accounts. By contrast, on a single machine the results are repeatable.  
->  
-> We welcome any suggestions regarding this issue. Importantly, such instability is **not unique to our method**—it also appears in baseline ICL methods. Nevertheless, repeated trials consistently confirm the same empirical conclusions.  
->  
-> For transparency, we provide part of our experiment logs on [Hugging Face](https://huggingface.co/datasets/tianle233/icrl-data/) for reference (note: earlier logs were automatically cleared by the cluster).  
+>
+> While In-Context Learning (ICL) inevitably involves some variance due to hardware differences and random seed selection, our experiments demonstrate that these effects **do not alter the main conclusions**.
+>
+> We have fixed random seeds wherever possible, and on a single machine our results are fully reproducible. On large-scale clusters, occasional variation may occur—even with the same FM cache and identical codebase—but repeated trials consistently yield the same trends and support our claims.
+>
+> Importantly, such behavior is not unique to our method and is also observed in baseline ICL approaches. To promote transparency, we release a recent subset of our experiment logs on [Hugging Face](https://huggingface.co/datasets/tianle233/icrl-data/)(note: earlier logs were automatically cleared by the cluster).
+
+
 
 ---
 
