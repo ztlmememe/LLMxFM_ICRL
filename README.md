@@ -3,7 +3,7 @@
 
 This repository contains the implementation of the following paper. 
 
-📄 **Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner?A Case Study with In-Context Representation Learning**  
+<!-- 📄 **Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner?A Case Study with In-Context Representation Learning**   -->
 
 
 > **Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner?A Case Study with In-Context Representation Learning**<br>
@@ -17,6 +17,25 @@ Tianle Zhang, Wanlong Fang, Jonathan Woo, Paridhi Latawa, Deepak A. Subramanian,
 
 🔗 **Links:**  
 - [📑 Paper (arXiv)](https://arxiv.org/abs/xxxx.xxxxx)  
+
+
+---
+
+## 📣  Overview
+
+![icrl\_pipline](Pipline.png)
+
+We introduce **In-Context Representation Learning (ICRL)**, a training-free framework that enables Large Language Models (LLMs) to directly consume and reason over **representations from non-text foundation models (FMs)**. Unlike standard in-context learning (ICL), which relies on text–label pairs, ICRL injects modality-specific embeddings into LLMs either at the **text level** (via dimensionality-reduced PCA strings) or at the **embedding level** (via zero-padding, random projection, or optimal transport alignment). This design allows LLMs to perform multimodal inference **without additional fine-tuning or paired data**, offering a lightweight and highly adaptable alternative to supervised alignment.
+
+Through extensive studies across molecular property prediction and beyond, we show that ICRL exhibits several important properties:
+
+* **Generic Integration**: Works with diverse modality encoders (e.g., molecular, protein, vision, audio) by aligning their embeddings into the LLM’s representational space.
+* **Representation-Level Generalization**: Preserves the geometry of FM embeddings and adapts LLMs to new modalities purely through few-shot examples in context.
+* **Training-Free Efficiency**: Provides a lightweight alternative that can be executed within seconds on CPU, offering a favorable efficiency–performance balance compared to resource-intensive fine-tuning pipelines for multimodal LLMs.
+* **In-Depth Analysis**: Beyond empirical benchmarks, we conduct systematic studies on injection strategies, projector designs, and representation alignment. These analyses reveal the underlying mechanisms that govern ICRL’s performance, shedding light on when and why representation-level integration succeeds, and guiding future extensions across domains.
+
+
+ICRL demonstrates the **universality and practicality of representation-level approaches**: instead of training new multi-modal architectures, existing FMs and LLMs can be seamlessly composed at inference time. This opens a promising direction for **scalable, plug-and-play multimodal reasoning** across scientific and real-world domains.
 
 ---
 
