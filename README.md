@@ -1,11 +1,22 @@
 
-# In-Context Representation Learning (ICRL)
-Official code release for the NeurIPS 2025 paper:  
-**"Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning"**  
-Authors: Tianle Zhang, Wanlong Fang, Jonathan Woo, Paridhi Latawa, Deepak A. Subramanian, Alvin Chan 
+# 🚀 In-Context Representation Learning (ICRL)
 
-[[Paper Link]](https://arxiv.org/abs/xxxx.xxxxx) | [[NeurIPS Page]](https://neurips.cc/virtual/YYYY/poster/XXXX)  
+This repository contains the implementation of the following paper. 
 
+📄 **Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner?A Case Study with In-Context Representation Learning**  
+
+
+> **Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner?A Case Study with In-Context Representation Learning**<br>
+> Authors: Tianle Zhang, Wanlong Fang, Jonathan Woo, Paridhi Latawa, Deepak A. Subramanian, Alvin Chan  
+> The Thirty-ninth Annual Conference on Neural Information Processing Systems (**NIPS**), 2025
+
+<!-- > [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Yinan He](https://github.com/yinanhe)<sup>∗</sup>, [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Tianxing Wu](https://tianxingwu.github.io/), [Qingyang Jin](https://github.com/Vchitect/VBench), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br> -->
+<!-- 
+👨‍💻 **Authors:**  
+Tianle Zhang, Wanlong Fang, Jonathan Woo, Paridhi Latawa, Deepak A. Subramanian, Alvin Chan   -->
+
+🔗 **Links:**  
+- [📑 Paper (arXiv)](https://arxiv.org/abs/xxxx.xxxxx)  
 
 ---
 
