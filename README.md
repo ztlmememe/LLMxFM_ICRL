@@ -16,7 +16,7 @@ This repository contains the implementation of the following paper.
 Tianle Zhang, Wanlong Fang, Jonathan Woo, Paridhi Latawa, Deepak A. Subramanian, Alvin Chan   -->
 
 🔗 **Links:**  
-- [📑 Paper (arXiv)](https://arxiv.org/abs/xxxx.xxxxx)  
+- [📑 Paper (arXiv)](https://arxiv.org/abs/2509.17552)  
 
 
 ---
