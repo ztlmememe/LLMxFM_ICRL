@@ -218,7 +218,19 @@ This script runs all variants (`rep`, `rep_w_o_norm`, `rep_icl`) across 10 rando
 ---
 
 
+### 📝 Additional Note on Representation Tokens
 
+We found that adjusting the **representation marker tokens** used in ICRL (by default `[REP]` and `[/REP]`) can sometimes improve performance.  
+In later experiments with the **8B LLaMA models**, we mostly adopted a new setting:  
+
+```bash
+rep_start_token = "("
+rep_end_token = ")"
+```
+
+This choice ensures that the representation markers each occupy fewer tokens, avoiding the unintended complexity introduced by multi-character markers. Complex tokens may hinder the model’s ability to effectively utilize representation-level signals, so this simplified setup often leads to more stable results.
+
+---
 
 ### :warning: Known Issues :warning:
 > ***Disclaimer :grey_exclamation:***  
@@ -235,12 +247,13 @@ This script runs all variants (`rep`, `rep_w_o_norm`, `rep_icl`) across 10 rando
 
 # 📖 BibTex
 ```bibtex
-@inproceedings{
-    charakorn2025texttolora,
-    title={Text-to-Lo{RA}: Instant Transformer Adaption},
-    author={Rujikorn Charakorn and Edoardo Cetin and Yujin Tang and Robert Tjarko Lange},
-    booktitle={Forty-second International Conference on Machine Learning},
-    year={2025},
-    url={https://openreview.net/forum?id=zWskCdu3QA}
+@misc{zhang2025llmsreasonnontextmodalities,
+      title={Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning}, 
+      author={Tianle Zhang and Wanlong Fang and Jonathan Woo and Paridhi Latawa and Deepak A. Subramanian and Alvin Chan},
+      year={2025},
+      eprint={2509.17552},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2509.17552}, 
 }
 ```
